@@ -1,35 +1,29 @@
 const stringAlphabetUS = "abcdefghijklmnopqrstuvwxyz";
-const iterateThroughAlphabet = [..."stringAlphabetUS"];
 var numberEquivalentArr = [];
 let mapAlphabet2Numbers = new Map();
 let inWord ="gnu";
+let alphabet = "";
 
-/* relationship one to one, is this true? TODO*/
-function generateNumbersFromAlpha(stringAlphabetUS, numberEquivalentArr) {
-    for (var i = 0; i < stringAlphabetUS.length; i++) {
-        numberEquivalentArr.push(i + 1);
-        console.log(stringAlphabetUS[i]);
-        console.log(numberEquivalentArr[i + 1]);
+/*set the alphabet from input*/
+/* TODO make the alphabet consntant*/
+function setAlphabet(inputAlphabet) {
+    alphabet = inputAlphabet;
+};
+
+function translateChar2Number(inputWord) {
+    setAlphabet(stringAlphabetUS);
+    let outputNumbersArray = [];
+    let selector = NaN;
+    for(let i = 0; i < inputWord.length; i++) {
+        selector = alphabet.search(inputWord[i]);
+        outputNumbersArray[i] = selector + 1;
+        console.log(outputNumbersArray[i]);
     };
+
+    return outputNumbersArray;
 };
 
-function mapAlphabet2Number(mapAlphabet2Numbers) {
-    for (var i = 0; i < stringAlphabetUS.length; i++) {
-        mapAlphabet2Numbers.set(numberEquivalentArr[i + 1], stringAlphabetUS.charAt(i));
-    };
-};
 
-function translateChar2Number(inWord) {
-/* TODO */
-};
+const outWord = translateChar2Number(inWord);
 
-generateNumbersFromAlpha(stringAlphabetUS, numberEquivalentArr);
-mapAlphabet2Number(mapAlphabet2Numbers);
-/*translateChar2Number(inWord);*/
-
-console.log(stringAlphabetUS.length);
-console.log(stringAlphabetUS);
-console.log(numberEquivalentArr);
-console.log(typeof stringAlphabetUS.length);
-console.log(typeof stringAlphabetUS);
-console.log(typeof numberEquivalentArr);
+console.log(outWord);
