@@ -50,6 +50,7 @@ function howBigAlphabetIs(alphabetIn, wordArr) {
 setAlphabet(stringAlphabetUS);
 const outWord = translateChar2Number(inWord);
 
-console.log(outWord); 
-howBigAlphabetIs(alphabet, outWord)
+console.log(outWord);
+howBigAlphabetIs(alphabet, outWord);
 
+console.log("end of alphabet script!"); 
