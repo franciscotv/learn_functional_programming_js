@@ -52,3 +52,4 @@ const outWord = translateChar2Number(inWord);
 
 console.log(outWord); 
 howBigAlphabetIs(alphabet, outWord)
+
